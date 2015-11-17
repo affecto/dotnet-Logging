@@ -1,7 +1,10 @@
-# Affecto.Logging
-Interfaces and base implementation for creating and using loggers.
-
-Download as a NuGet package from https://www.nuget.org/packages/Affecto.Logging/
+# Logging
+* **Affecto.Logging**
+  * Interfaces and base implementation for creating and using loggers.
+  * NuGet: https://www.nuget.org/packages/Affecto.Logging
+* **Affecto.Logging.Log4Net**
+  * Implements the logging interfaces of Affecto.Logging package using Log4Net.
+  * NuGet: https://www.nuget.org/packages/Affecto.Logging.Log4Net
 
 ## Build status
 
