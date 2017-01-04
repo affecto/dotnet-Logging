@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{825C9EBD-8B41-4CC8-84DA-9B0A13E484C9}"
 EndProject
@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{FA0DB353-4
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.NLog", "Logging.NLog\Logging.NLog.csproj", "{9A05D2A8-7A36-42AF-B036-4A472D4AD8FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.NLog.Tests", "Logging.NLog.Tests\Logging.NLog.Tests.csproj", "{1B8392E0-C306-4CC1-9836-6C99290F0393}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,14 @@ Global
 		{63CB9D04-8BC8-4291-ACC6-AD887BE950BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63CB9D04-8BC8-4291-ACC6-AD887BE950BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63CB9D04-8BC8-4291-ACC6-AD887BE950BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A05D2A8-7A36-42AF-B036-4A472D4AD8FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A05D2A8-7A36-42AF-B036-4A472D4AD8FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A05D2A8-7A36-42AF-B036-4A472D4AD8FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A05D2A8-7A36-42AF-B036-4A472D4AD8FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B8392E0-C306-4CC1-9836-6C99290F0393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B8392E0-C306-4CC1-9836-6C99290F0393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B8392E0-C306-4CC1-9836-6C99290F0393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B8392E0-C306-4CC1-9836-6C99290F0393}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
