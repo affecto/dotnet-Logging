@@ -7,33 +7,33 @@ namespace Affecto.Logging.NLog.Tests
     [TestClass]
     public class LoggerRepositoryTests
     {
-        private LoggerRepository _sut;
-        private NLogWrapper _wrapper;
+        private LoggerRepository sut;
+        private NLogWrapper wrapper;
 
         [TestInitialize]
         public void Setup()
         {
-            _wrapper = Substitute.For<NLogWrapper>();
-            _sut = new LoggerRepository(_wrapper);
+            wrapper = Substitute.For<NLogWrapper>();
+            sut = new LoggerRepository(wrapper);
         }
 
         [TestMethod]
         public void ConfigurationIsDoneOnce()
         {
-            _sut.GetLogger(typeof(string));
-            _sut.GetLogger(typeof(int));
-            _sut.GetLogger(typeof(int));
+            sut.GetLogger(typeof(string));
+            sut.GetLogger(typeof(int));
+            sut.GetLogger(typeof(int));
 
-            _wrapper.Received(1).Configure();
+            wrapper.Received(1).Configure();
         }
 
         [TestMethod]
         public void LoggerInstanceIsQueriedFromWrapper()
         {
             var logger = Substitute.For<nLog.ILogger>();
-            _wrapper.GetLogger(typeof(string)).Returns(logger);
+            wrapper.GetLogger(typeof(string)).Returns(logger);
 
-            var firstLogger = _sut.GetLogger(typeof(string));
+            var firstLogger = sut.GetLogger(typeof(string));
 
             Assert.AreSame(logger, firstLogger);
         }
@@ -42,13 +42,13 @@ namespace Affecto.Logging.NLog.Tests
         public void SameLoggerInstanceIsReturnedFromMultipleCalls()
         {
             var log = Substitute.For<nLog.ILogger>();
-            _wrapper.GetLogger(typeof(string)).Returns(log);
+            wrapper.GetLogger(typeof(string)).Returns(log);
 
-            var firstLogger = _sut.GetLogger(typeof(string));
-            var secondLogger = _sut.GetLogger(typeof(string));
+            var firstLogger = sut.GetLogger(typeof(string));
+            var secondLogger = sut.GetLogger(typeof(string));
 
             Assert.AreSame(firstLogger, secondLogger);
-            _wrapper.Received(1).GetLogger(typeof(string));
+            wrapper.Received(1).GetLogger(typeof(string));
         }
     }
 }

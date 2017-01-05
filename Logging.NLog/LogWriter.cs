@@ -7,9 +7,9 @@ namespace Affecto.Logging.NLog
 {
     internal class LogWriter : ILogWriter
     {
-        private readonly ILoggerRepository _loggerRepository;
-        private readonly Type _sourceType;
-        private nLog.ILogger _logger;
+        private readonly ILoggerRepository loggerRepository;
+        private readonly Type sourceType;
+        private nLog.ILogger logger;
 
         public LogWriter(ILoggerRepository loggerRepository, object source)
         {
@@ -18,24 +18,24 @@ namespace Affecto.Logging.NLog
                 throw new ArgumentNullException(nameof(loggerRepository));
             }
 
-            this._loggerRepository = loggerRepository;
+            this.loggerRepository = loggerRepository;
 
-            _sourceType = source?.GetType() ?? MethodBase.GetCurrentMethod().DeclaringType;
+            sourceType = source?.GetType() ?? MethodBase.GetCurrentMethod().DeclaringType;
         }
 
         public void WriteLog(ICorrelation correlation, LogEventLevel eventLevel, Exception exception, string message, params object[] args)
         {
-            if (_logger == null)
+            if (logger == null)
             {
-                _logger = _loggerRepository.GetLogger(_sourceType);
+                logger = loggerRepository.GetLogger(sourceType);
             }
 
-            if (eventLevel == LogEventLevel.Verbose && !_logger.IsDebugEnabled)
+            if (eventLevel == LogEventLevel.Verbose && !logger.IsDebugEnabled)
             {
                 return;
             }
 
-            var logEvent = new nLog.LogEventInfo(MapEventLevel(eventLevel), _logger.Name, CultureInfo.CurrentCulture, message, args, exception);
+            var logEvent = new nLog.LogEventInfo(MapEventLevel(eventLevel), logger.Name, CultureInfo.CurrentCulture, message, args, exception);
 
             if (correlation != null)
             {
@@ -43,7 +43,7 @@ namespace Affecto.Logging.NLog
                 logEvent.Properties["CorrelationId"] = correlation.CorrelationId;
             }
 
-            _logger.Log(logEvent);
+            logger.Log(logEvent);
         }
 
         public void WriteLog(LogEventLevel eventLevel, Exception exception, string formatMessage, params object[] args)
