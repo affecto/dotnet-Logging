@@ -5,6 +5,9 @@
 * **Affecto.Logging.Log4Net**
   * Implements the logging interfaces of Affecto.Logging package using Log4Net.
   * NuGet: https://www.nuget.org/packages/Affecto.Logging.Log4Net
+* **Affecto.Logging.NLog**
+  * Implements the logging interfaces of Affecto.Logging package using NLog.
+
 
 ## Build status
 
