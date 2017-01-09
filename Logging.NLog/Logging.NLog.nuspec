@@ -6,7 +6,7 @@
     <authors>$author$</authors>
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-Logging</projectUrl>
-    <tags>affecto log logging NLog</tags>
-    <releaseNotes>Implemented NLog support for Affecto.Logging library</releaseNotes>
+    <tags>affecto log logging nlog</tags>
+    <releaseNotes>Implemented NLog support for Affecto.Logging library.</releaseNotes>
   </metadata>
 </package>
