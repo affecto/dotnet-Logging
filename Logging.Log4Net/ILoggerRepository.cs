@@ -1,4 +1,5 @@
 using System;
+
 using log4net;
 
 namespace Affecto.Logging.Log4Net

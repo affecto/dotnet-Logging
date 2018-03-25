@@ -1,6 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+
 using nLog = NLog;
+
+[assembly: InternalsVisibleTo("Affecto.Logging.NLog.Tests")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 
 namespace Affecto.Logging.NLog
 {
