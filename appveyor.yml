@@ -29,22 +29,3 @@ test_script:
 on_finish :
   # any cleanup in here
 deploy: off
-
-pull_requests:
-  do_not_increment_build_number: true
-nuget:
-  disable_publish_on_pr: true
-before_build:
-- cmd: nuget restore
-build:
-  publish_nuget: true
-  publish_nuget_symbols: true
-  include_nuget_references: true
-  verbosity: minimal
-configuration: Release
-deploy:
-- provider: NuGet
-  api_key:
-    secure: ySttUuKXaqz/qn7dZRtJJs7H8wTDgT8Wgi55QFGZjmVE2XL14T2puaPiBcNMZC1l
-  on:
-    APPVEYOR_REPO_TAG: true
