@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-
 using log4net;
 
 namespace Affecto.Logging.Log4Net

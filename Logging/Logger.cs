@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace Affecto.Logging
 {
     internal class Logger : ILogger, ICorrelationLogger

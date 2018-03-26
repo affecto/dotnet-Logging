@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-
 using nLog = NLog;
 
 namespace Affecto.Logging.NLog
@@ -10,7 +9,6 @@ namespace Affecto.Logging.NLog
         private readonly Dictionary<Type, nLog.ILogger> createdLoggers;
         private readonly object createLock;
         private readonly NLogWrapper wrapper;
-
         private bool isConfigured;
 
         public LoggerRepository(NLogWrapper wrapper)
