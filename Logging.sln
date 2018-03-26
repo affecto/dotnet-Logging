@@ -1,16 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{825C9EBD-8B41-4CC8-84DA-9B0A13E484C9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Log4Net", "Logging.Log4Net\Logging.Log4Net.csproj", "{42016F4E-8B84-4BE5-858A-433D5759D233}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Tests", "Logging.Tests\Logging.Tests.csproj", "{98CFF89F-9191-4B14-85A4-7BB890D767DE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Log4Net.Tests", "Logging.Log4Net.Tests\Logging.Log4Net.Tests.csproj", "{63CB9D04-8BC8-4291-ACC6-AD887BE950BA}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{FA0DB353-4B42-4134-9619-EF886D50797E}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
@@ -19,9 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{FA0DB353-4
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.NLog", "Logging.NLog\Logging.NLog.csproj", "{9A05D2A8-7A36-42AF-B036-4A472D4AD8FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging", "Logging\Logging.csproj", "{DFA1597A-4CBE-4AEE-AA33-49D1B983A079}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging.Log4Net", "Logging.Log4Net\Logging.Log4Net.csproj", "{0B2AE4BB-C6FA-4FBC-91A5-8195842DF767}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Log4Net.Tests", "Logging.Log4Net.Tests\Logging.Log4Net.Tests.csproj", "{63CB9D04-8BC8-4291-ACC6-AD887BE950BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging.NLog", "Logging.NLog\Logging.NLog.csproj", "{7764ABD6-EFDC-4A18-9502-423798325B90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.NLog.Tests", "Logging.NLog.Tests\Logging.NLog.Tests.csproj", "{1B8392E0-C306-4CC1-9836-6C99290F0393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Tests", "Logging.Tests\Logging.Tests.csproj", "{98CFF89F-9191-4B14-85A4-7BB890D767DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,32 +29,35 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{825C9EBD-8B41-4CC8-84DA-9B0A13E484C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{825C9EBD-8B41-4CC8-84DA-9B0A13E484C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{825C9EBD-8B41-4CC8-84DA-9B0A13E484C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{825C9EBD-8B41-4CC8-84DA-9B0A13E484C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42016F4E-8B84-4BE5-858A-433D5759D233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42016F4E-8B84-4BE5-858A-433D5759D233}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42016F4E-8B84-4BE5-858A-433D5759D233}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42016F4E-8B84-4BE5-858A-433D5759D233}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98CFF89F-9191-4B14-85A4-7BB890D767DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98CFF89F-9191-4B14-85A4-7BB890D767DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98CFF89F-9191-4B14-85A4-7BB890D767DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98CFF89F-9191-4B14-85A4-7BB890D767DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFA1597A-4CBE-4AEE-AA33-49D1B983A079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFA1597A-4CBE-4AEE-AA33-49D1B983A079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFA1597A-4CBE-4AEE-AA33-49D1B983A079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFA1597A-4CBE-4AEE-AA33-49D1B983A079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B2AE4BB-C6FA-4FBC-91A5-8195842DF767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2AE4BB-C6FA-4FBC-91A5-8195842DF767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2AE4BB-C6FA-4FBC-91A5-8195842DF767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2AE4BB-C6FA-4FBC-91A5-8195842DF767}.Release|Any CPU.Build.0 = Release|Any CPU
 		{63CB9D04-8BC8-4291-ACC6-AD887BE950BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{63CB9D04-8BC8-4291-ACC6-AD887BE950BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63CB9D04-8BC8-4291-ACC6-AD887BE950BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63CB9D04-8BC8-4291-ACC6-AD887BE950BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A05D2A8-7A36-42AF-B036-4A472D4AD8FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A05D2A8-7A36-42AF-B036-4A472D4AD8FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A05D2A8-7A36-42AF-B036-4A472D4AD8FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A05D2A8-7A36-42AF-B036-4A472D4AD8FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7764ABD6-EFDC-4A18-9502-423798325B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7764ABD6-EFDC-4A18-9502-423798325B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7764ABD6-EFDC-4A18-9502-423798325B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7764ABD6-EFDC-4A18-9502-423798325B90}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1B8392E0-C306-4CC1-9836-6C99290F0393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1B8392E0-C306-4CC1-9836-6C99290F0393}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B8392E0-C306-4CC1-9836-6C99290F0393}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B8392E0-C306-4CC1-9836-6C99290F0393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98CFF89F-9191-4B14-85A4-7BB890D767DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98CFF89F-9191-4B14-85A4-7BB890D767DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98CFF89F-9191-4B14-85A4-7BB890D767DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98CFF89F-9191-4B14-85A4-7BB890D767DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2AF40A8E-20E0-48FB-BC51-8D5811B4A56D}
 	EndGlobalSection
 EndGlobal

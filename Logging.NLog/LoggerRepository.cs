@@ -6,10 +6,9 @@ namespace Affecto.Logging.NLog
 {
     internal class LoggerRepository : ILoggerRepository
     {
-        private readonly NLogWrapper wrapper;
-        private readonly object createLock;
         private readonly Dictionary<Type, nLog.ILogger> createdLoggers;
-
+        private readonly object createLock;
+        private readonly NLogWrapper wrapper;
         private bool isConfigured;
 
         public LoggerRepository(NLogWrapper wrapper)
