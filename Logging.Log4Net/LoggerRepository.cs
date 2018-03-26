@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 using log4net;
-[assembly: InternalsVisibleTo("Affecto.Logging.Log4Net.Tests")]
-[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 
 namespace Affecto.Logging.Log4Net
 {

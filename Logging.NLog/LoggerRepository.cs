@@ -1,19 +1,15 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 using nLog = NLog;
-
-[assembly: InternalsVisibleTo("Affecto.Logging.NLog.Tests")]
-[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 
 namespace Affecto.Logging.NLog
 {
     internal class LoggerRepository : ILoggerRepository
     {
-        private readonly NLogWrapper wrapper;
-        private readonly object createLock;
         private readonly Dictionary<Type, nLog.ILogger> createdLoggers;
+        private readonly object createLock;
+        private readonly NLogWrapper wrapper;
 
         private bool isConfigured;
 

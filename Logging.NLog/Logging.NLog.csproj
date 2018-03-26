@@ -4,6 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Affecto.Logging.NLog</AssemblyName>
     <RootNamespace>Affecto.Logging.NLog</RootNamespace>
+    <PackageReleaseNotes>Migrated to .NET Standard 2.0</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Affecto</Authors>
+    <Description>Implements the logging interfaces of Affecto.Logging package using NLog.</Description>
+    <PackageTags>affecto log logging nlog</PackageTags>
+    <PackageProjectUrl>https://github.com/affecto/dotnet-Logging</PackageProjectUrl>
+    <Version>3.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
