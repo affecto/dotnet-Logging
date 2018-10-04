@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.NLog.Tests", "Loggi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Tests", "Logging.Tests\Logging.Tests.csproj", "{98CFF89F-9191-4B14-85A4-7BB890D767DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Serilog", "Logging.Serilog\Logging.Serilog.csproj", "{4B6CD1A3-E0BB-4529-9B8C-DB24FDECDA5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{98CFF89F-9191-4B14-85A4-7BB890D767DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98CFF89F-9191-4B14-85A4-7BB890D767DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98CFF89F-9191-4B14-85A4-7BB890D767DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B6CD1A3-E0BB-4529-9B8C-DB24FDECDA5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B6CD1A3-E0BB-4529-9B8C-DB24FDECDA5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B6CD1A3-E0BB-4529-9B8C-DB24FDECDA5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B6CD1A3-E0BB-4529-9B8C-DB24FDECDA5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
