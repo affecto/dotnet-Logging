@@ -4,7 +4,9 @@ namespace Affecto.Logging
 {
     public interface ILogger
     {
+        void Log(LogEventLevel level, string formatMessage, params object[] args);
         void LogVerbose(string formatMessage, params object[] args);
+        void LogDebug(string formatMessage, params object[] args);
         void LogInformation(string formatMessage, params object[] args);
         void LogWarning(string formatMessage, params object[] args);
         void LogWarning(Exception exception, string formatMessage, params object[] args);

@@ -16,6 +16,20 @@ namespace Affecto.Logging
             this.logWriter = logWriter;
         }
 
+        #region Generic
+
+        public void Log(LogEventLevel level, string formatMessage, params object[] args)
+        {
+            Log(null, level, formatMessage, args);
+        }
+
+        public void Log(ICorrelation correlation, LogEventLevel level, string formatMessage, params object[] args)
+        {
+            logWriter.WriteLog(correlation, level, null, formatMessage, args);
+        }
+
+        #endregion
+
         #region Verbose
 
         public void LogVerbose(string formatMessage, params object[] args)
@@ -26,6 +40,20 @@ namespace Affecto.Logging
         public void LogVerbose(ICorrelation correlation, string formatMessage, params object[] args)
         {
             logWriter.WriteLog(correlation, LogEventLevel.Verbose, null, formatMessage, args);
+        }
+
+        #endregion
+
+        #region Debug
+
+        public void LogDebug(string formatMessage, params object[] args)
+        {
+            LogDebug(null, formatMessage, args);
+        }
+
+        public void LogDebug(ICorrelation correlation, string formatMessage, params object[] args)
+        {
+            logWriter.WriteLog(correlation, LogEventLevel.Debug, null, formatMessage, args);
         }
 
         #endregion

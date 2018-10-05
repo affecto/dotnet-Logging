@@ -192,6 +192,15 @@ namespace Affecto.Logging.NLog.Tests
         }
 
         [TestMethod]
+        public void DebugLevelIsLogged()
+        {
+            logger.IsDebugEnabled.Returns(true);
+            sut.WriteLog(correlation, LogEventLevel.Debug, Exception, Message, MessageParams);
+
+            logger.Received().Log(Arg.Is<nLog.LogEventInfo>(e => e.Level == nLog.LogLevel.Debug));
+        }
+
+        [TestMethod]
         public void InformationLevelIsLogged()
         {
             sut.WriteLog(correlation, LogEventLevel.Information, Exception, Message, MessageParams);

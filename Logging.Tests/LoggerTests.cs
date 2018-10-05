@@ -28,6 +28,32 @@ namespace Affecto.Logging.Tests
         }
 
         [TestMethod]
+        public void GenericEventIsWrittenToLog()
+        {
+            sut.Log(LogEventLevel.Warning, Message, MessageParams);
+            AssertCall(null, LogEventLevel.Warning, null, Message, MessageParams);
+        }
+
+        [TestMethod]
+        public void GenericEventWithCorrelationIdIsWrittenToLog()
+        {
+            correlation.CorrelationId.Returns(CorrelationId);
+            sut.Log(correlation, LogEventLevel.Critical, Message, MessageParams);
+
+            AssertCall(correlation, LogEventLevel.Critical, null, Message, MessageParams);
+        }
+
+        [TestMethod]
+        public void GenericEventWithCallerIdAndCorrelationIdIsWrittenToLog()
+        {
+            correlation.CorrelationId.Returns(CorrelationId);
+            correlation.CallerId.Returns(CallerId);
+            sut.Log(correlation, LogEventLevel.Debug, Message, MessageParams);
+
+            AssertCall(correlation, LogEventLevel.Debug, null, Message, MessageParams);
+        }
+
+        [TestMethod]
         public void VerboseEventIsWrittenToLog()
         {
             sut.LogVerbose(Message, MessageParams);
@@ -49,8 +75,34 @@ namespace Affecto.Logging.Tests
             correlation.CorrelationId.Returns(CorrelationId);
             correlation.CallerId.Returns(CallerId);
             sut.LogVerbose(correlation, Message, MessageParams);
-            
+
             AssertCall(correlation, LogEventLevel.Verbose, null, Message, MessageParams);
+        }
+
+        [TestMethod]
+        public void DebugEventIsWrittenToLog()
+        {
+            sut.LogDebug(Message, MessageParams);
+            AssertCall(null, LogEventLevel.Debug, null, Message, MessageParams);
+        }
+
+        [TestMethod]
+        public void DebugEventWithCorrelationIdIsWrittenToLog()
+        {
+            correlation.CorrelationId.Returns(CorrelationId);
+            sut.LogDebug(correlation, Message, MessageParams);
+
+            AssertCall(correlation, LogEventLevel.Debug, null, Message, MessageParams);
+        }
+
+        [TestMethod]
+        public void DebugEventWithCallerIdAndCorrelationIdIsWrittenToLog()
+        {
+            correlation.CorrelationId.Returns(CorrelationId);
+            correlation.CallerId.Returns(CallerId);
+            sut.LogDebug(correlation, Message, MessageParams);
+            
+            AssertCall(correlation, LogEventLevel.Debug, null, Message, MessageParams);
         }
 
         [TestMethod]

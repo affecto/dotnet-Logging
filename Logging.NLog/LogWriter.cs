@@ -56,6 +56,7 @@ namespace Affecto.Logging.NLog
             switch (eventLevel)
             {
                 case LogEventLevel.Verbose:
+                case LogEventLevel.Debug:
                     return nLog.LogLevel.Debug;
                 case LogEventLevel.Information:
                     return nLog.LogLevel.Info;
