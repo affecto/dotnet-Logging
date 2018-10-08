@@ -5,17 +5,19 @@ namespace Affecto.Logging.Serilog
 {
     public class SerilogLoggerFactory : LoggerFactory
     {
-        private readonly int stackFramesToSkipForCallingTypeAndMethod;
         private static global::Serilog.ILogger loggerSingleton;
+        private readonly bool logCallingTypeAndMethod;
+        private readonly int stackFramesToSkipForCallingTypeAndMethod;
         private readonly object createLock = new object();
 
-        public SerilogLoggerFactory(int stackFramesToSkipForCallingTypeAndMethod = 0)
+        public SerilogLoggerFactory(bool logCallingTypeAndMethod = false, int stackFramesToSkipForCallingTypeAndMethod = 0)
         {
             if (stackFramesToSkipForCallingTypeAndMethod < 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(stackFramesToSkipForCallingTypeAndMethod));
             }
 
+            this.logCallingTypeAndMethod = logCallingTypeAndMethod;
             this.stackFramesToSkipForCallingTypeAndMethod = stackFramesToSkipForCallingTypeAndMethod;
         }
 
@@ -37,8 +39,14 @@ namespace Affecto.Logging.Serilog
 
         protected virtual LoggerConfiguration CreateLoggerConfiguration()
         {
-            return new LoggerConfiguration()
-                .Enrich.WithCallingTypeAndMethod(stackFramesToSkipForCallingTypeAndMethod);
+            var configuration = new LoggerConfiguration();
+
+            if (logCallingTypeAndMethod)
+            {
+                configuration.Enrich.WithCallingTypeAndMethod(stackFramesToSkipForCallingTypeAndMethod);
+            }
+
+            return configuration;
         }
     }
 }

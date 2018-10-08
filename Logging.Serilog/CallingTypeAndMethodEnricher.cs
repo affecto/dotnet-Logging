@@ -24,7 +24,7 @@ namespace Affecto.Logging.Serilog
 
         public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
         {
-            int skip = stackFramesToSkip + 3;
+            int skip = stackFramesToSkip + 6;
 
             while (true)
             {
@@ -38,8 +38,9 @@ namespace Affecto.Logging.Serilog
                 var method = stack.GetMethod();
                 if (method != null && method.DeclaringType != null && method.DeclaringType.Assembly != typeof(Log).Assembly)
                 {
-                    var caller = $"{method.DeclaringType.FullName}.{method.Name}({string.Join(", ", method.GetParameters().Select(pi => pi.ParameterType.FullName))})";
+                    var caller = $"{method.DeclaringType.FullName}.{method.Name}({string.Join(", ", method.GetParameters().Select(pi => pi.ParameterType.Name))})";
                     logEvent.AddPropertyIfAbsent(new LogEventProperty("Caller", new ScalarValue(caller)));
+                    return;
                 }
 
                 skip++;
