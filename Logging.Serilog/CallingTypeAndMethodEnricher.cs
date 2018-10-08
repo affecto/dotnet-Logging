@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using Serilog;
 using Serilog.Configuration;
@@ -7,11 +8,24 @@ using Serilog.Events;
 
 namespace Affecto.Logging.Serilog
 {
-    internal class CallerEnricher : ILogEventEnricher
+    internal class CallingTypeAndMethodEnricher : ILogEventEnricher
     {
+        private readonly int stackFramesToSkip;
+
+        public CallingTypeAndMethodEnricher(int stackFramesToSkip = 0)
+        {
+            if (stackFramesToSkip < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(stackFramesToSkip));
+            }
+
+            this.stackFramesToSkip = stackFramesToSkip;
+        }
+
         public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
         {
-            var skip = 3;
+            int skip = stackFramesToSkip + 3;
+
             while (true)
             {
                 var stack = new StackFrame(skip);
@@ -33,11 +47,11 @@ namespace Affecto.Logging.Serilog
         }
     }
 
-    internal static class LoggerCallerEnrichmentConfiguration
+    internal static class EnrichmentExtensions
     {
-        public static LoggerConfiguration WithCaller(this LoggerEnrichmentConfiguration enrichmentConfiguration)
+        public static LoggerConfiguration WithCallingTypeAndMethod(this LoggerEnrichmentConfiguration enrichmentConfiguration, int stackFramesToSkip = 0)
         {
-            return enrichmentConfiguration.With<CallerEnricher>();
+            return enrichmentConfiguration.With(new CallingTypeAndMethodEnricher(stackFramesToSkip));
         }
     }
 }
