@@ -71,6 +71,8 @@ namespace Affecto.Logging.Log4Net
             {
                 case LogEventLevel.Verbose:
                     return Level.Verbose;
+                case LogEventLevel.Debug:
+                    return Level.Debug;
                 case LogEventLevel.Information:
                     return Level.Info;
                 case LogEventLevel.Warning:

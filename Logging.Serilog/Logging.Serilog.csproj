@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Affecto.Logging.Serilog</PackageId>
+    <Product>Affeco.Logging.Serilog</Product>
+    <Authors>Affecto</Authors>
+    <Version>3.1.0</Version>
+    <Description>Implements the logging interfaces of Affecto.Logging package using Serilog.</Description>
+    <PackageProjectUrl>https://github.com/affecto/dotnet-Logging</PackageProjectUrl>
+    <PackageTags>affecto log logging serilog</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes>Initial version</PackageReleaseNotes>
+    <AssemblyName>Affecto.Logging.Serilog</AssemblyName>
+    <RootNamespace>Affecto.Logging.Serilog</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Logging\Logging.csproj" />
+  </ItemGroup>
+
+</Project>
