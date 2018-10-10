@@ -5,7 +5,7 @@
     <PackageId>Affecto.Logging.Serilog</PackageId>
     <Product>Affeco.Logging.Serilog</Product>
     <Authors>Affecto</Authors>
-    <Version>3.1.0-prerelease03</Version>
+    <Version>3.1.0</Version>
     <Description>Implements the logging interfaces of Affecto.Logging package using Serilog.</Description>
     <PackageProjectUrl>https://github.com/affecto/dotnet-Logging</PackageProjectUrl>
     <PackageTags>affecto log logging serilog</PackageTags>
