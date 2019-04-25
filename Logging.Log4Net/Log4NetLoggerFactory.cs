@@ -1,4 +1,6 @@
-﻿namespace Affecto.Logging.Log4Net
+﻿using System.Reflection;
+
+namespace Affecto.Logging.Log4Net
 {
     public class Log4NetLoggerFactory : LoggerFactory
     {
