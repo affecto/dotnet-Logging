@@ -20,7 +20,7 @@ namespace Affecto.Logging.Log4Net
 
             if (configFileInfo.Exists)
             {
-                XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
+                XmlConfigurator.Configure(logRepository, configFileInfo);
             }
             else
             {
