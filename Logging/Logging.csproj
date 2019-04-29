@@ -7,12 +7,12 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Interfaces and base implementation for creating and using loggers.</Description>
     <Company>Affecto</Company>
-    <Version>3.1.0</Version>
+    <Version>3.2.0</Version>
     <PackageProjectUrl>https://github.com/affecto/dotnet-Logging</PackageProjectUrl>
     <PackageTags>affecto log logging</PackageTags>
     <Authors>Affecto</Authors>
     <PackageReleaseNotes>Added a new log level "Debug". Added new methods for logging by passing a log level parameter.</PackageReleaseNotes>
-    <AssemblyVersion>3.1.0.0</AssemblyVersion>
+    <AssemblyVersion>3.2.0.0</AssemblyVersion>
   </PropertyGroup>
 
 </Project>

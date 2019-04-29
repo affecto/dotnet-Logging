@@ -10,7 +10,7 @@
     <Description>Implements the logging interfaces of Affecto.Logging package using NLog.</Description>
     <PackageTags>affecto log logging nlog</PackageTags>
     <PackageProjectUrl>https://github.com/affecto/dotnet-Logging</PackageProjectUrl>
-    <Version>3.1.0</Version>
+    <Version>3.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
