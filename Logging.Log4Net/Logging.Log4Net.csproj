@@ -9,7 +9,7 @@
     <Authors>Affecto</Authors>
     <AssemblyVersion>3.2.1.0</AssemblyVersion>
     <FileVersion>3.2.1.0</FileVersion>
-    <Version>3.2.1-prerelease01</Version>
+    <Version>3.2.1</Version>
     <Description>Implements the logging interfaces of Affecto.Logging package using Log4Net.</Description>
     <PackageProjectUrl>https://github.com/affecto/dotnet-Logging</PackageProjectUrl>
     <PackageTags>affecto log logging log4net</PackageTags>
