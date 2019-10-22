@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -35,18 +34,20 @@ namespace Affecto.Logging.Log4Net
 
         private Assembly GetInitialAssembly()
         {
-            Assembly assembly = Assembly.GetEntryAssembly();
+            Assembly entryAssembly = Assembly.GetEntryAssembly();
 
-            if (assembly == null)
+            if (entryAssembly == null)
             {
                 Assembly currentAssembly = Assembly.GetExecutingAssembly();
                 IEnumerable<Assembly> callerAssemblies = new StackTrace().GetFrames()
-                    .Select(x => x.GetMethod().ReflectedType.Assembly).Distinct()
-                    .Where(x => x.GetReferencedAssemblies().Any(y => y.FullName == currentAssembly.FullName));
-                assembly = callerAssemblies.Last();
+                    .Select(frame => frame?.GetMethod()?.ReflectedType?.Assembly).Distinct()
+                    .Where(assembly => assembly != null
+                                       && assembly.GetReferencedAssemblies().Any(referencedAssembly => referencedAssembly?.FullName == currentAssembly.FullName));
+
+                entryAssembly = callerAssemblies.Last();
             }
 
-            return assembly;
+            return entryAssembly;
         }
     }
 }

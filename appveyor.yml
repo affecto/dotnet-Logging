@@ -9,12 +9,12 @@ before_build:
 build:
   publish_nuget: true
   publish_nuget_symbols: true
-  include_nuget_references: true
+  use_snupkg_format: true
   verbosity: minimal
 configuration: Release
 deploy:
 - provider: NuGet
   api_key:
-    secure: d1zuUS/YE+1OoKmhdJOV4E3QxxrgE1ygZx9auqjlYH+u/4lJIjdrcWti0hcpa3Vv
+    secure: rD2gGQmfm43pax0DCOHZ0GoM6/+JzRmp6FNNDPHEC/0qjDUS48pU+r9rjK8T08wf
   on:
     APPVEYOR_REPO_TAG: true
