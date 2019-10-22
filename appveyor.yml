@@ -9,7 +9,7 @@ before_build:
 build:
   publish_nuget: true
   publish_nuget_symbols: true
-  include_nuget_references: true
+  use_snupkg_format: true
   verbosity: minimal
 configuration: Release
 deploy:
